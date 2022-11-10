@@ -25,13 +25,23 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div class="my-10">
+        <div className="my-10">
           <input
             type="text"
             name="name"
             id="name"
-            className="block mx-auto py-2 rounded-full border-gray-700 px-4 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className="block px-4 py-2 mx-auto border-gray-700 rounded-full shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
             placeholder="Search monsters"
+            onChange={(e)=>{
+              const castSearched = e.target.value.toLocaleLowerCase();
+
+              const filteredMonsters = this.state.monsters.filter((monster)=>{
+                return monster.name.toLocaleLowerCase().includes(castSearched)
+              });
+              this.setState(()=>{
+                return {'monsters':filteredMonsters}
+              })
+            }}
           />
         </div>
         {this.state.monsters.map((monster) => {
