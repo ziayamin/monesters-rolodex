@@ -32,9 +32,12 @@ class App extends Component {
   }
   
   
+
   render() {
-    const filteredMonsters = this.state.monsters.filter((monster)=>{
-      return monster.name.toLocaleLowerCase().includes(this.state.searchField)
+    const {monsters,searchField}= this.state;
+    const {onSearchChange} = this;
+    const filteredMonsters = monsters.filter((monster)=>{
+      return monster.name.toLocaleLowerCase().includes(searchField)
     });
    
     return (
@@ -46,7 +49,7 @@ class App extends Component {
             id="name"
             className="block px-4 py-2 mx-auto border-gray-700 rounded-full shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
             placeholder="Search monsters"
-            onChange={this.onSearchChange}
+            onChange={onSearchChange}
           />
         </div>
         {filteredMonsters.map((monster) => {
