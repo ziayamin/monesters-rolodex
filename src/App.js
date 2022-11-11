@@ -23,10 +23,20 @@ class App extends Component {
         )
       );
   }
+
+  onSearchChange =(e)=>{
+    const searchField = e.target.value.toLocaleLowerCase();
+    this.setState(()=>{
+      return {searchField}
+    })
+  }
+  
+  
   render() {
     const filteredMonsters = this.state.monsters.filter((monster)=>{
       return monster.name.toLocaleLowerCase().includes(this.state.searchField)
     });
+   
     return (
       <div className="App">
         <div className="my-10">
@@ -36,12 +46,7 @@ class App extends Component {
             id="name"
             className="block px-4 py-2 mx-auto border-gray-700 rounded-full shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
             placeholder="Search monsters"
-            onChange={(e)=>{
-              const searchField = e.target.value.toLocaleLowerCase();
-              this.setState(()=>{
-                return {searchField}
-              })
-            }}
+            onChange={this.onSearchChange}
           />
         </div>
         {filteredMonsters.map((monster) => {
