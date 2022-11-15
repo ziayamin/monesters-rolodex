@@ -45,9 +45,9 @@ class App extends Component {
       <div className="App">
         <div className="my-10">
           <input
-            type="text"
-            name="name"
-            id="name"
+            type="search"
+            name="search"
+            id="search"
             className="block px-4 py-2 mx-auto border-gray-700 rounded-full shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
             placeholder="Search monsters"
             onChange={onSearchChange}
