@@ -53,14 +53,8 @@ class App extends Component {
             onChange={onSearchChange}
           />
         </div>
-        {/* {filteredMonsters.map((monster) => {
-          return (
-            <h1 className="text-xl font-semibold" key={monster.id}>
-              {monster.name}{" "}
-            </h1>
-          );
-        })} */}
-        <CardList />
+       
+        <CardList monster={filteredMonsters}/>
       </div>
     );
   }
