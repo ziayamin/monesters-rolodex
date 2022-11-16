@@ -3,7 +3,7 @@ import {Component} from 'react';
 class SearchBox extends Component{
     render (){
         return (
-            <div className="my-10">
+            <div className="py-10">
             <input
               type="search"
               name={this.props.name}
