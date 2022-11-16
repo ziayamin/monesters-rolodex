@@ -5,7 +5,7 @@ class Card extends Component {
   render() {
     const { id, name, email, phone, username } = this.props.monster;
     return (
-      <div className="flex flex-col col-span-1 text-center bg-white divide-y divide-gray-200 rounded-lg shadow">
+      <div className="flex flex-col col-span-1 text-center bg-teal-700 divide-y divide-gray-200 rounded-lg shadow">
         <div className="flex flex-col flex-1 p-8">
           <img
             className="flex-shrink-0 w-32 h-32 mx-auto rounded-full"
